@@ -1,0 +1,6 @@
+#Node
+node_modules/
+
+video/
+.mp4
+.img
