@@ -7,17 +7,17 @@
 
 * {
     box-sizing: border-box;
-    /* border: 1px dashed white;
-    background-color: rgba(0,0,0,0.2); */
+    border: 1px dashed white;
+    background-color: rgba(0,0,0,0.2);
 }
 
-img, video, svg {
+img, iframe, svg {
     max-width: 100%;
     height: auto;
 }
 
 body {
-    margin: 0;
+    margin: 0 ;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -232,7 +232,7 @@ ul, a, li {
 .left-8     { left: 2rem; }
 
 
-   /* ANCHOR OBJECT-FIT */
+/* ANCHOR OBJECT-FIT */
    
 
 .object-contain   { object-fit: contain; }
@@ -277,6 +277,8 @@ ul, a, li {
     transform: translate(-50% , -50%);
 }
 
+
+
 .hero__video{
     width: 100%;
 }
@@ -287,13 +289,149 @@ position: absolute;
  left: 0;
  right: 0;
  padding: 16px;
- background-image: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,1));
+ background: linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,1));
  color: #ffffff;
  display: flex;
  justify-content: center;
  flex-direction: column;
  align-items: center;
-
+ text-align: center ;
 }
 
 
+.hero-div__btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+
+
+.hero__btn{
+ 
+  display: inline-block;          
+  padding: 12px 50px;
+  background-color: #2563eb;       
+  color: white;
+  text-decoration: none;          
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+    
+}
+
+.hero__btn:hover {
+  background-color: #1e40af;
+}
+
+
+
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-content: center;
+  
+}
+
+.game-card__link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-card{
+  width: 80%;
+ aspect-ratio: 16/9;
+        
+
+  background-size: cover;        
+  background-position: center;   
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  padding: 16px;
+  color: white;
+
+   position: relative; /* NOTE permet de servir de repère */
+  overflow: hidden;   /* NOTE permet de coupé et rendre invisible ce qui dépasse du bloc */
+
+}
+
+.game-card::before {
+ content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(  /* NOTE permet de créer un voile noir pour faire ressortir le texte*/
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2)
+  );
+   transition: background 0.3s ease;
+}
+
+.game-card:hover::before {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.game-card h2,
+.game-card p {
+  position: relative;
+  
+}
+
+
+.game-card::after {
+  content: "Nouveau";           
+  position: absolute;          
+  top: 10px;                   
+  right: 10px;                  
+  background-color: red;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: small;
+  font-weight: bold ;
+}
+
+.game-card:hover::after {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Vidéo de fond floue */
+.video-bg {
+  position: absolute;
+  inset: 0;
+  width: 110%;
+  height: 110%;
+  filter: blur(25px);
+  transform: scale(1.2);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Vidéo nette au-dessus */
+.video-front {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  display: block;
+  z-index: 2;
+}

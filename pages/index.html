@@ -9,7 +9,7 @@
 </head>
 
 <body class="bg-alice">
-    <header>
+    <header class="sticky top-0">
 
         <nav>
             <ul class="flex bg-black ul-style justify-center gap-10p border-bot border-rad">
@@ -19,7 +19,7 @@
                 <a href="#" class="flex items-center text-black">
                     <li class="text-black text-xl ">Accueil</li>
                 </a>
-                <a href="#" class="flex items-center text-black">
+                <a href="./gamepage.html" class="flex items-center text-black">
                     <li class="text-black text-xl">Jeux</li>
                 </a>
                 <a href="#" class="flex items-center text-black">
@@ -35,22 +35,49 @@
 
 
     <main>
-        <div class="hero">
-            <video autoplay muted loop src="../assets/video/alex_jeux.mp4" class="hero__video-bg "></video>
 
-            <div class="hero__presentation ">
-                <video autoplay muted loop src="../assets/video/alex_jeux.mp4"
-                    class=" hero__video"></video>
+
+        <div class="hero">
+        <div class="video-wrapper">
+  <!-- Vidéo floue en arrière-plan -->
+  <iframe
+    class="video-bg"
+    src="https://www.youtube.com/embed/Jy4HRCrXbQk?autoplay=1&mute=1&loop=1&playlist=Jy4HRCrXbQk&controls=0&showinfo=0"
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
+
+  <!-- Vidéo nette au premier plan -->
+  <iframe
+    class="video-front"
+    src="https://www.youtube.com/embed/Jy4HRCrXbQk?autoplay=1&mute=1&loop=1&playlist=Jy4HRCrXbQk"
+    frameborder="0"
+    allow="autoplay"
+  ></iframe>
+</div>
 
                 <div class="hero__presentation-txt">
-                    <h2> Jouez mieux. Comprenez plus. Progressez ensemble.</h2>
-                    <div>
-                        <button>JEUX</button>
+                    <h2> Un site communautaire moderne dédié aux joueurs, proposant des guides clairs pour mieux
+                        comprendre les mécaniques, les builds et les stratégies de différents jeux.</h2>
+
+                    <div class="hero-div__btn">
+                        <a href="/pages/page-lol.html" class="bg-alice  hero__btn">Champions</a>
+                        <a href="./gamepage.html" class="bg-alice p-3 hero__btn">Jeux</a>
+                        <a href="/pages/page-lol.html" class="bg-alice p-3 hero__btn"> Builds</a>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <section>
+            <h2>Game</h2>
+
+            <div id="container" class="king-games__carousel "></div>
+        </section>
+
+
+
     </main>
 
 
@@ -58,7 +85,7 @@
     <footer></footer>
 
 
-    <script src="../assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

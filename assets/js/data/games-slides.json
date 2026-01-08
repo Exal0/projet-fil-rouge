@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Arc Raiders",
+        "desc": "Extract Shooter, PvPvE",
+        "imgUrl": "/assets/images/arc-raiders.jpg",
+        "link": "/"
+    },
+    {
+        "id": 2,
+        "title": "Fortnite",
+        "desc": "Battle Royale",
+        "imgUrl": "/assets/images/fortnite.jpg"
+    },
+    {
+        "id": 3,
+        "title": "League Of Legends",
+        "desc": "Moba de haute vélocité",
+        "imgUrl": "/assets/images/lol.jpg",
+        "link" : "/pages/page-lol.html"
+    }
+]
