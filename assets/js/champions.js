@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   displayChampions();   //ICI affiche tous les champions 
 
 
+  //NOTE - Afficher les champions par leurs rôles
   document.getElementById("filter-all").addEventListener("click", ()=> displayChampions());
   document.getElementById("filter-fighter").addEventListener("click", () => displayChampions("Fighter"));   
   document.getElementById("filter-mage").addEventListener("click", () => displayChampions("Mage"));
@@ -61,25 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//NOTE - Afficher les champions par rapport a leurs nom
 document.getElementById("search-champion").addEventListener("input", (e) => {
   const searchValue = e.target.value;
   displayChampions({ search: searchValue });
 });
 
-app.get('/champion/:id', async (req, res) => {
-  const champId = req.params.id;
-  const response = await fetch(`https://ddragon.leagueoflegends.com/cdn/13.23.1/data/en_US/champion/${champId}.json`);
-  const data = await response.json();
-  res.json(data);
-});
-
-async function showChampionDetails(champId) {
-  const res = await fetch(`/champion/${champId}`);
-  const data = await res.json();
-  const champ = data.data[champId];
-
-  console.log(champ.name, champ.passive, champ.spells);
-}
 
 
-showChampionDetails()
