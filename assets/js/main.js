@@ -1,16 +1,20 @@
 const container = document.getElementById('container');
 
+
+
+
 function callApi() {
     
 
 fetch('/assets/js/data/games-slides.json')
   .then(res => res.json())
-  .then(games => {
+  .then(data => {
+     const games = data.games; 
 
     games.forEach(game => {
 
       const link = document.createElement('a');
-    link.href = game.link; 
+    link.href = games.link; 
     link.classList.add("game-card__link");
     
       const article = document.createElement('article');
@@ -40,5 +44,9 @@ fetch('/assets/js/data/games-slides.json')
 }
 
 callApi()
+
+
+
+
 
 

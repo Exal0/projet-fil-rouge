@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <header class="top-0">
+
+        <nav class="">
+            <ul class="flex ul-style justify-center gap-10p border-bot bg-black ">
+                <a href="#" class="flex items-center text-black">
+                    <li class="w-100p text-3xl"> LvLHub </li>
+                </a>
+                <a href="/pages/index.html" class="flex items-center text-black">
+                    <li class="text-black text-xl ">Accueil</li>
+                </a>
+                <a href="./gamepage.html" class="flex items-center text-black">
+                    <li class="text-black text-xl">Jeux</li>
+                </a>
+                <a href="#" class="flex items-center text-black">
+                    <li class="text-black text-xl">Support</li>
+                </a>
+
+
+            </ul>
+        </nav>
+
+    </header>1
+
+    <main>
+        <section class="w-100p">
+            <div class="">
+                <h1>Liste des champions LoL</h1>
+
+                <div class="w-100p">
+                     
+                    
+<button id="filter-fighter" class="w-3p">
+    
+  <img src="/assets/images/roles_lol/Fighter_icon.png" alt="Fighter" class="">
+</button>
+
+
+<button id="filter-mage" class="w-3p">
+    
+  <img src="/assets/images/roles_lol/Mage_icon.png" alt="Mage">
+</button>
+
+<button id="filter-marksman" class="w-3p">
+  <img src="/assets/images/roles_lol/Marksman_icon.png" alt="Marksman">
+</button>
+
+<button id="filter-assassin" class="w-3p">
+  <img src="/assets/images/roles_lol/Slayer_icon.png" alt="Assassin">
+</button>
+
+<button id="filter-support" class="w-3p">
+  <img src="/assets/images/roles_lol/Support_icon.png" alt="Support">
+</button>
+
+<button id="filter-tank" class="w-3p">
+  <img src="/assets/images/roles_lol/Tank_icon.png" alt="Tank">
+</button>
+
+                            <input type="search" id="search-champion">
+                </div>
+            </div>
+
+            <div class="w-100p flex justify-center">
+                <div class="champions-container" id="champions-container"></div>
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="/assets/js/champions.js"></script>
+</body>
+
+</html>
