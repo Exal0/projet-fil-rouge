@@ -23,13 +23,6 @@
       "link": "/pages/page-lol.html"
     }
 
-],
-
-"laneImgs": {
-  "top": "/assets/images/lane_lol/Top_icon.png",
-  "jgl": "/assets/images/lane_lol/Jungle_icon.png",
-  "mid": "/assets/images/lane_lol/Middle_icon.png",
-  "bot": "/assets/images/lane_lol/Bottom_icon.png",
-  "sup": "/assets/images/lane_lol/Support_icon.png"
+]
 }
- }
+ 

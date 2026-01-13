@@ -9,6 +9,8 @@
 </head>
 
 <body>
+
+
     <header class="top-0">
 
         <nav class="">
@@ -30,67 +32,82 @@
             </ul>
         </nav>
 
-    </header>1
+    </header>
 
     <main>
         <section class="w-100p">
             <div class="">
                 <h1 class="text-white">Liste des champions LoL</h1>
 
-                <div class="w-100p">
-                     
-          
-                    
-        <div class="flex justify-center gap-6">
-
-<button id="filter-all" class="filter-btn">
-  <img src="/assets/images/roles_lol/Coy_Emote.png" alt="Tous">
-  <span>Tous</span>
-</button>
-
-<button id="filter-fighter" class="filter-btn">
-  <img src="/assets/images/roles_lol/Fighter_icon.png" alt="Fighter">
-  <span>Combattant</span>
-</button>
-
-<button id="filter-mage" class="filter-btn">
-  <img src="/assets/images/roles_lol/Mage_icon.png" alt="Mage">
-  <span>Mage</span>
-</button>
-
-<button id="filter-marksman" class="filter-btn">
-  <img src="/assets/images/roles_lol/Marksman_icon.png" alt="Marksman">
-  <span>Tireur</span>
-</button>
-
-<button id="filter-assassin" class="filter-btn">
-  <img src="/assets/images/roles_lol/Slayer_icon.png" alt="Assassin">
-  <span>Assassin</span>
-</button>
-
-<button id="filter-support" class="filter-btn">
-  <img src="/assets/images/roles_lol/Support_icon.png" alt="Support">
-  <span>Support</span>
-</button>
-
-<button id="filter-tank" class="filter-btn">
-  <img src="/assets/images/roles_lol/Tank_icon.png" alt="Tank">
-  <span>Tank</span>
-</button>
+                <div class="w-100 ">
 
 
-<input type="search" placeholder="Entrez un nom" id="search-champion" class = "search-champion w-30p">
-</div>
+                    <div class="flex gap-10 direction-column">
+                        <div class="flex justify-center gap-6">
 
+                            <button id="filter-all" class="filter-btn ">
+                                <img src="/assets/images/roles_lol/Coy_Emote.png" alt="Tous">
+                                <span>Tous</span>
+                            </button>
+
+                            <button id="filter-fighter" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Fighter_icon.png" alt="Fighter">
+                                <span>Combattant</span>
+                            </button>
+
+                            <button id="filter-mage" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Mage_icon.png" alt="Mage">
+                                <span>Mage</span>
+                            </button>
+
+                            <button id="filter-marksman" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Marksman_icon.png" alt="Marksman">
+                                <span>Tireur</span>
+                            </button>
+
+                            <button id="filter-assassin" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Slayer_icon.png" alt="Assassin">
+                                <span>Assassin</span>
+                            </button>
+
+                            <button id="filter-support" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Support_icon.png" alt="Support">
+                                <span>Support</span>
+                            </button>
+
+                            <button id="filter-tank" class="filter-btn">
+                                <img src="/assets/images/roles_lol/Tank_icon.png" alt="Tank">
+                                <span>Tank</span>
+                            </button>
+
+
+                        
+                        </div>
+
+                        <div class="flex justify-center">
+
+                            <input type="search" placeholder="Entrez un nom" id="search-champion"
+                                class="search-champion w-40p">
+                                </div>
+                    </div>
                 </div>
             </div>
 
             <div class="w-100p flex justify-center">
                 <div class="champions-container" id="champions-container"></div>
             </div>
-            
+
 
         </section>
+
+
+    
+
+  <div id="champions" class="champions-grid"></div>  <!-- Creation du point d'encrage --> 
+
+
+
+
     </main>
 
     <script src="/assets/js/champions.js"></script>

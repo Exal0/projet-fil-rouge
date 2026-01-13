@@ -1,14 +1,20 @@
 
 /* @import */
-
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
 
 /* REBOOT */
 
+
+/* box-sizing: border-box; */
+/* border: 1px dashed white;*/
+
 body {
-    /* box-sizing: border-box; */
-    /* border: 1px dashed white;*/
-   
+  margin: 0;
+  padding: 0;
+  background: #050a14;
+  color: #e6d6a8;
+  font-family: 'Cinzel', serif;
 }
 
 img, iframe, svg {
@@ -16,11 +22,6 @@ img, iframe, svg {
     height: auto;
 }
 
-body {
-    margin: 0 ;
-    font-family: Arial, Helvetica, sans-serif;
-     background-color: black
-}
 
 main {
     min-height: 75vh;
@@ -138,6 +139,10 @@ h3{
 .justify-between { justify-content: space-between; }
 .justify-around { justify-content: space-around; }
 .justify-evenly { justify-content: space-evenly; }
+
+
+.direction-column {flex-direction: column;}
+
 
 /* ANCHOR FLEX ENFANT */
 .items-start     { align-items: flex-start; }
@@ -400,121 +405,122 @@ h3{
 }
 
 /* ===== CHAMPIONS ===== */
-.champions-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 100%;
-  width: 60%;
-  gap: 20px;
-  margin-top: 20px;
-  font-size: x-small;
-}
-
-.champion-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 150px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin: 10px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.champion-card:hover {
-  transform: scale(1.05);
-}
-
-.champion-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.champion-card h3 {
-  margin: 5px 0 0;
-}
-
-.champion-card p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #ccc;
-}
-
-.champion-roles {
-  display: flex;
-  justify-content: center;
-  gap: 5px;              
-  margin-bottom: 5px;   
-}
-
-.champion-roles img,
-.role-icon {
-  width: 24px;            
-  height: 24px;
+#champions {
+  display: grid; /* NOTE - Active la grille */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* NOTE - Colonnes auto responsives */
+  gap: 24px; 
+  padding: 40px; 
+  width: 50%; 
+  margin: 0 auto; /* NOTE - Centre horizontalement */
 }
 
 
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+
+.champ-card {
+  position: relative; /* NOTE - Référence pour le absolute du span */
+  overflow: hidden; 
+  border-radius: 12px; 
+  background: #0a1428; 
+  text-align: center; 
+  cursor: pointer;
+  border: 1px solid rgba(200, 170, 110, 0.4); /* NOTE - Bordure dorée */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* NOTE - Animations fluides */
 }
+
+.champ-card::before {          /*REVIEW - Ajouter un element visuel sans toucher a l'HTML*/
+  content: ""; /* NOTE - Pseudo élément décoratif */
+  position: absolute; /* NOTE - Position libre */
+  inset: 0; /* NOTE - Prend toute la carte */
+  border: 1px solid rgba(200, 170, 110, 0.2); 
+  pointer-events: none; 
+}
+
+
+.champ-card:hover {
+  transform: translateY(-6px) scale(1.02); /* NOTE - Effet flottant + zoom */
+  box-shadow:
+    0 10px 30px rgba(200,170,110,0.25), /* NOTE - Ombre dorée */
+    0 0 20px rgba(0,160,255,0.15); /* NOTE - Glow bleu */
+}
+
+
+.champ-card img {
+  position: relative; /* NOTE - Nécessaire pour z-index */
+  z-index: 1; /* NOTE - Image derrière le texte */
+  width: 100%; 
+  display: block; /* NOTE - Supprime espaces bizarres */
+}
+
+
+
+.champ-card span {
+  text-align: center; /* NOTE - Centre le texte */
+  background: linear-gradient( /* NOTE - Dégradé LoL */
+    to bottom,
+    rgba(5, 10, 20, 0),
+    rgba(0, 0, 0, 0.747),
+    rgb(0, 0, 0)
+  );
+  font-size: 13px; 
+  letter-spacing: 0.2em; 
+  text-transform: uppercase; /* NOTE - Tout en majuscules */
+  text-shadow: 0 0 6px rgba(230, 214, 168, 0.3); /* NOTE - Glow léger */
+
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  padding: 12px; 
+  z-index: 2; /* NOTE - Au-dessus de l’image */
+}
+
+/* NOTE - Buttons  Style */
 
 .filter-btn {
-  all: unset;
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 4px 8px;
-  border-radius: 6px;
-
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-
-  font-size: 12px;
-  color: #fff;
-
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  align-items: center; 
+  gap: 6px; 
+  padding: 10px 12px; 
+  background: rgba(10, 20, 40, 0.6); 
+  border: 1px solid rgba(200, 170, 110, 0.4); 
+  border-radius: 10px; 
+  cursor: pointer; 
+  transition: all 0.25s ease; 
+ 
+ 
 }
 
-
 .filter-btn img {
-  width: 18px;
-  height: 18px;
+  width: 32px; 
+  height: 32px; 
+  object-fit: contain; 
+}
+
+.filter-btn span {
+  font-size: 12px; /* NOTE - Taille texte */
+  letter-spacing: 0.15em; /* NOTE - Style épique */
+  text-transform: uppercase; /* NOTE - Majuscules */
+  color: #e6d6a8; /* NOTE - Doré */
 }
 
 .filter-btn:hover {
-  background-color: #2a2a2a;
+  background: rgba(20, 40, 80, 0.8); /* NOTE - Fond plus clair */
+  box-shadow: 0 0 12px rgba(0, 160, 255, 0.3); /* NOTE - Glow bleu */
+  transform: translateY(-2px); /* NOTE - Léger lift */
 }
 
-.filter-btn:active {
-  transform: scale(0.95);
+.filter-btn.active {
+  background: rgba(30, 60, 120, 0.9); /* NOTE - Bouton sélectionné */
+  box-shadow:
+    0 0 12px rgba(0, 160, 255, 0.4),
+    0 0 20px rgba(200, 170, 110, 0.3);
 }
-
-
 
 .search-champion{
-  color: white;
+  font-size: "Cinzel", serif;
   border-radius: 20px;
-  border: solid 2px white;
   background-color: transparent;
-}
-
-
-@media (max-width: 768px) {
-  .filter-btn span {
-    display: none;
-  
-  }
+  border: solid 3px rgba(200, 170, 110, 0.3);
+  color: white;
+  padding: 9px;
+  font-size: large;
 }
