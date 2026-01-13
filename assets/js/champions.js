@@ -42,6 +42,11 @@ function displayChampions(champions) {
     card.appendChild(img);
     card.appendChild(name);
 
+    card.addEventListener("click", () => {
+  openModal(champ);
+});
+
+
     championContainer.appendChild(card);
   });
 }
@@ -93,3 +98,82 @@ tankFilter.addEventListener("click", () => {
   const filtered = allChampions.filter(champ => champ.tags.includes("Tank"));
   displayChampions(filtered);
 });
+
+
+let searchInput = document.getElementById("search-champion");
+searchInput.addEventListener("input", ()=> {
+  const query = searchInput.value.toLowerCase();
+
+  const filtered = allChampions.filter(champ =>
+    champ.name.toLowerCase().includes(query)
+  );
+  displayChampions(filtered)
+})
+
+
+const modal = document.getElementById("champion-modal");
+const modalOverlay = modal.querySelector(".modal-overlay");
+const modalClose = document.getElementById("modal-close");
+
+const modalSplash = document.getElementById("modal-splash");
+const modalName = document.getElementById("modal-name");
+const modalTitle = document.getElementById("modal-title");
+const modalLore = document.getElementById("modal-lore");
+const modalRoles = document.getElementById("modal-roles");
+const modalSpells = document.getElementById("modal-spells");
+
+
+function openModal(champ) {
+  console.log("OPEN MODAL", champ.id);
+
+  // Texte
+  modalName.textContent = champ.name;
+  modalTitle.textContent = champ.title;
+  modalLore.textContent = champ.blurb;
+
+  // Image splash
+  modalSplash.src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg`;
+
+  // Rôles
+  modalRoles.innerHTML = "";
+  champ.tags.forEach(tag => {
+    const span = document.createElement("span");
+    span.textContent = tag;
+    modalRoles.appendChild(span);
+  });
+
+  // Spells (fetch ICI, pas ailleurs)
+  modalSpells.innerHTML = "";
+
+  fetch(`https://ddragon.leagueoflegends.com/cdn/16.1.1/data/en_US/champion/${champ.id}.json`)
+    .then(res => res.json())
+    .then(data => {
+      const spells = data.data[champ.id].spells;
+
+      spells.forEach(spell => {
+        const img = document.createElement("img");
+        img.src = `https://ddragon.leagueoflegends.com/cdn/16.1.1/img/spell/${spell.image.full}`;
+        img.alt = spell.name;
+        img.title = spell.name;
+
+        modalSpells.appendChild(img);
+      });
+    });
+
+  // Afficher la modal
+  modal.classList.remove("hidden");
+}
+
+
+modalClose.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+modalOverlay.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+
+
+
+
