@@ -174,6 +174,12 @@ modalOverlay.addEventListener("click", () => {
 });
 
 
+const burger = document.getElementById("header-burger");
+const nav = document.querySelector(".header-nav");
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
 
 
 
