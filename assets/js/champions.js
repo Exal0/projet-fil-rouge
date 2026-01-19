@@ -142,8 +142,8 @@ function openModal(champ) {
     modalRoles.appendChild(span);
   });
 
-  // Spells (fetch ICI, pas ailleurs)
-  modalSpells.innerHTML = "";
+  // Spells (fetch ICI)
+  modalSpells.innerHTML = "";     // 
 
   fetch(`https://ddragon.leagueoflegends.com/cdn/16.1.1/data/en_US/champion/${champ.id}.json`)
     .then(res => res.json())
@@ -180,6 +180,5 @@ const nav = document.querySelector(".header-nav");
 burger.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
-
 
 

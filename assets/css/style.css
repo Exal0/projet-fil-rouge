@@ -469,7 +469,7 @@ h3{
   letter-spacing: 0.2em; 
   text-transform: uppercase; /* NOTE - Tout en majuscules */
   text-shadow: 0 0 6px rgba(230, 214, 168, 0.3); /* NOTE - Glow léger */
-
+color: #9a6b2f;
   position: absolute; 
   bottom: 0; 
   left: 0; 
@@ -859,7 +859,7 @@ h3{
   }
 
   .header-burger {
-    display: block;             /* ← LE VOILA */
+    display: block;           
   }
 
   .header-menu li:not(.logo):not(.header-burger) {
